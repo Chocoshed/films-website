@@ -1,0 +1,77 @@
+main{
+    flex-direction: column;
+    width: 70%;
+}
+
+h2{
+    font-size: 15px;
+}
+
+.commentaire{
+    
+    background-blend-mode: multiply;
+  background-color: rgba(255, 255, 255, 0.5);
+    margin: 5px;
+    padding: 10px;
+    border-radius: 30px;
+    display: flex;
+}
+
+.commentaire div{
+    margin: 10px;
+}
+
+.commentaire div:last-of-type{
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.commentaire div:first-of-type{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.commentaire div *{
+    color: black;
+}
+
+form{
+    width: 50%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+form *{
+    color:black;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form label{
+    margin-bottom: 5px;
+    color: white;
+}
+
+form textarea{
+    resize: none;
+}
+
+form button{
+    width: 150px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px 0;
+    color: black;
+}
+
+.buttons{
+    display: flex;
+}
+
+img{
+    width: 255px;
+}

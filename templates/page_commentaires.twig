@@ -1,0 +1,45 @@
+{% extends "base.twig" %}
+
+{% block link_css %}
+./css/commentaires.css
+{% endblock %}
+
+{% block main %}
+
+<main>
+    <section>
+        <h1>Les commentaires</h1>
+        {% for comm in commentaires %}
+        <article class="commentaire">
+            <div>
+                <a href="./films_article.php?id={{comm.id_film}}">
+                    <h2>{{comm.titre_film}}</h2>
+                </a>
+                <img src="{{comm.image_film}}" alt="">
+            </div>
+            <div>
+                <p>Pseudo : {{comm.pseudo}}</p>
+                <p>note : {{comm.note}}</p>
+                <p>Commentaire : {{comm.commentaire}}</p>
+            </div>
+            <div class="buttons">
+                <form action="page_modif_com.php" method="POST">
+                    <input type="hidden" value="{{comm.id_commentaire}}" name="keyToModify">
+                    <button type="submit">Modifier</button>
+                </form>
+                <form action="" method="POST" role="form">
+                    <button type="sumbmit" name="submitDeleteBtn">Supprimer</button>
+                    <div>
+                        <input type="checkbox" name="keyToDelete" value="{{comm.id_commentaire}}" required>
+                        <label for="keyToDelete">Je suis sur de vouloir supprimer ce commentaire</label>
+                    </div>
+
+                </form>
+            </div>
+        </article>
+        {% endfor %}
+    </section>
+</main>
+
+
+{% endblock %}

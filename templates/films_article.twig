@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+{% block link_css %}
+css/film_article.css
+{% endblock %}
+{% block main %}
+
+<main>
+    <h1>{{ films.titre_film }}</h1>
+    <div class="information">
+        <img src="{{films.image_film}}" alt="image du film {{films.titre_film}}">
+        <div>
+            <ul>
+                {% if genres is not null %}
+                {% for fgenre in genres %}
+                <li class="small">{{ fgenre.genre }}</li>
+                {% endfor %}
+                {% else %}
+                <li class="aucun small">Pas d'auteur(s)</li>
+                {% endif %}
+            </ul>
+            <p><u>Origine :</u> {{origines.origine}}</p>
+
+            <p><u>Annee :</u> {{films.annee_film}}</p>
+
+            <p><u>Note :</u> {{moyenne}}/5</p>
+            {% if films.duree_film is not null %}
+            <p><u>Durée:</u> {{ films.duree_film }} min</p>
+            {% endif %}
+        </div>
+    </div>
+    <p><u>Synopsis</u>:</p>
+    <p>{{ films.synopsis_film }}</p>
+
+    <h2>Avis :</h2>
+
+    <form method="POST">
+        <label for="pseudo">Pseudo</label>
+        <input type="text" name="pseudo" id="pseudo" placeholder="pseudo">
+        <label for="note">Note</label>
+        <select name="note" id="note">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label for="commentaire">Commentaire :</label>
+        <textarea name="commentaire" id="commentaire" placeholder="Entrez votre commentaire"></textarea>
+        <button type="submit">Publier</button>
+    </form>
+    <div class="commentaire">
+        {% if commentaires is not empty%}
+        {% for comm in commentaires %}
+        <article>
+            <div>
+                <p>Pseudo : {{comm.pseudo}}</p>
+                <p>Note : {{comm.note}} / 5</p>
+            </div>
+            <p>Commentaire : {{comm.commentaire}}</p>
+        </article>
+        {% endfor %}
+        {% else %}
+        <p>Pas de commentaires</p>
+        {% endif %}
+    </div>
+</main>
+
+
+{% endblock main %}

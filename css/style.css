@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+body{
+    margin :0 ;
+    padding : 0;
+    background-color: black;
+}
+
+*{
+    color: rgb(231, 231, 231);
+    font-family: Roboto, sans-serif;
+}
+
+form *{
+    color: white;
+    
+}
+
+h1{
+    margin: 0;
+    
+    text-transform:uppercase;
+    
+}
+
+header{
+    margin: 0;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 40px;
+    background-color: #1D1D1D;
+    height: 40px;
+    align-items: center;
+}
+
+header a{
+    text-decoration: none;
+    display: block;
+    height: fit-content;
+    
+    text-transform:uppercase;
+    border-bottom: 2px solid transparent;
+    
+}
+
+header a:hover{
+    border-bottom: 2px solid white;
+}
+
+header ul{
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+header li {
+    margin: 0 20px;
+}
+
+
+
+main{
+    width : 85%;
+    margin: 0 auto;
+}
+
+aside{
+    width: 400px;
+}
+
+.maincontent{
+    width: 1200px;
+    font-family: 'Roboto', Courier, monospace;
+    font-weight: 300;
+}
+
+.film_liste{
+    display: block;
+}
+
+.film_liste article{
+    display:flex;
+}
+
+.film_vignette{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.film_info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 270px;
+}
+
+.film_synopsis {
+    margin: 20px;
+}
+
+i{
+    color:black;
+}
+

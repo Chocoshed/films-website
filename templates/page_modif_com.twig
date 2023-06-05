@@ -1,0 +1,32 @@
+{% extends "base.twig" %}
+{% block link_css %}
+css/commentaires.css
+{% endblock %}
+
+{% block main %}
+
+<main>
+
+    <form action="traitement_modif.php" method="POST">
+        <input type="hidden" value="{{com.id_commentaire}}" name="keyToModify">
+        <label for="pseudo">Pseudo</label>
+        <input type="text" name="pseudo" id="pseudo" placeholder="pseudo" value="{{com.pseudo}}">
+        <label for="note">Note</label>
+        <select name="note" id="note">
+            {% for i in 1..5 %}
+            {% if com.note == i %}
+            <option value="{{i}}" selected="selected">{{i}}</option>
+            {% else %}
+            <option value="{{i}}">{{i}}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+        <label for="commentaire">Commentaire :</label>
+        <textarea name="commentaire" id="commentaire"
+            placeholder="Entrez votre commentaire">{{com.commentaire}}</textarea>
+        <button type="submit">Modifier</button>
+        <a href="page_commentaires.php">Annuler</a>
+    </form>
+</main>
+
+{% endblock %}

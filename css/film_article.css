@@ -1,0 +1,72 @@
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.information{
+    display: flex;
+    margin: 20px 0;
+}
+
+.information div ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0 ;
+}
+
+.information div ul li{
+    background-color: rgb(77, 77, 77);
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+form *{
+    color:black;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+form label{
+    margin-bottom: 5px;
+    color: white;
+}
+
+form textarea{
+    resize: none;
+}
+
+form button{
+    width: 150px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 5px 0;
+    color: black;
+}
+
+.commentaire article{
+    border: 1px solid red;
+    background-color: gray;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.commentaire article div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.commentaire article div{
+    font-size: 1.5em;
+}
+
+.commentaire article>p{
+    margin: 5px;
+    padding: 5px;
+    font-size: 1.1em;
+}

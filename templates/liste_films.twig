@@ -1,0 +1,36 @@
+{% extends "page_films.twig" %}
+{% block maincontent %}
+
+<div class="maincontent">
+
+	<div class="buttons">
+		<button>
+			<i class="bi bi-list"></i>
+		</button>
+		<button>
+			<i class="bi bi-border-all"></i>
+		</button>
+	</div>
+	<p>nb film(s) affiché(s) : {{nbfilms}}</p>
+	<section id="section_film" class="film_liste">
+
+		{% for film in films %}
+		<article>
+			<div class="film_info">
+				<a href="films_article.php?id={{ film.id_film }}">
+					<img src="{{film.image_film}}" alt="image du film {{ film.titre_film }}">
+				</a>
+				<a href="films_article.php?id={{ film.id_film }}">{{ film.titre_film }}</a>
+			</div>
+
+			<p class="film_synopsis film_synopsis_block">{{film.synopsis_film}}</p>
+		</article>
+		{% else %}
+		<p>Pas de film trouvé</p>
+		{% endfor %}
+
+
+	</section>
+</div>
+
+{% endblock maincontent %}

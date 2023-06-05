@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Films</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="{% block link_css %} {% endblock %}">
+	<script src="script/script.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<h1>Films archives</h1>
+		<nav>
+			<ul>
+				<li><a href="./index.php">Accueil</a></li>
+				<li><a href="./page_films.php">Films</a></li>
+			</ul>
+		</nav>
+		<a href="./page_commentaires.php">Les Commentaires</a>
+	</header>
+	{% block main %}
+
+	{% endblock %}
+	{# <footer>
+		<p>Indentifiant sur l'URL : {{ id == 0 ? "Aucun" : id }}</p>
+	</footer> #}
+</body>
+
+</html>

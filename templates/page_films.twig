@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+
+{% block link_css %}
+./css/films.css
+{% endblock %}
+
+{% block main %}
+<main>
+    <aside>
+
+        <form method="POST">
+            <h1>Genres :</h1>
+            {% for fgenre in all_genres %}
+            <div>
+                <input class="hidden" type="checkbox" id="genre{{ fgenre.id_genre}}" name="genre[]"
+                    value="{{ fgenre.id_genre }}">
+                <label for="genre{{ fgenre.id_genre}}"><span class="text">{{ fgenre.genre }}</span></label>
+            </div>
+            {% endfor %}
+            <h1>Origines :</h1>
+            {% for forigine in all_origines %}
+            <div>
+                <input class="hidden" type="checkbox" id="origine{{ forigine.id_origine}}" name="origine[]"
+                    value="{{ forigine.id_origine }}">
+                <label for="origine{{ forigine.id_origine}}"><span class="text">{{ forigine.origine }}</span></label>
+            </div>
+            {% endfor %}
+            <div>
+                <button type="submit">Chercher</button>
+            </div>
+        </form>
+
+
+    </aside>
+
+    {% block maincontent %}
+    {% endblock maincontent %}
+</main>
+
+{% endblock main %}
